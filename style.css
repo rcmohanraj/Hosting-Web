@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* height: 100%; */
+}
+
+#product-overview {
+    background: url("freedom.jpg");
+    width: 100%;
+    height: 528px;
+    padding: 10px ;
+}
+
+#product-overview h1 {
+    color: white;
+    font-family: 'Calibri', sans-serif;
+}
+
+.section-title {
+    color: #2fcc2f;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Article Starts */
+.plan {
+    background: #a3ecab;
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.plan--highlighted {
+    background: green;
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__badge {
+    background: white;
+    color: green;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.61);
+    border-radius: 8px;
+}
+
+.plan_features {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+}
+
+.plan_features li {
+    margin: 8px 0;
+}
+
+.plan__title {
+    color: #0e4f14;
+}
+
+.plan__price {
+    color: grey;
+}
+
+.plan--highlighted .plan__title {
+    color: white;
+}
+
+.plan--highlighted .plan__price {
+    color: black;
+}
+
+.button {
+    background: #0e4f14;
+    color: white;
+    padding: 8px;
+    font: inherit;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: white;
+    color: #0e4f14;
+}
+
+/* avoiding outline border during the clicking of the button */
+.button:focus {
+    outline: none;
+}
+
+/* Article Ends */
+
+
+/* Key Feature Starts */
+#key-features {
+    background: #ff1b68;
+    margin-top: 80px;
+    padding: 16px;
+}
+
+#key-features .section-title {
+    color: white;
+    margin: 32px;
+}
+
+.key-features__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.key-feature {
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
+}
+
+.key-feature__image {
+    background: #ffcede;
+    width: 128px;
+    border: 2px solid darkgray;
+    border-radius: 50%;
+    height: 128px;
+    margin: auto;   /* Used to take up the available space horizontally  */
+}
+
+.key-feature__description {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* Key Feature Ends */
+
+
+.main-header {
+    width: 100%;
+    background: #2fcc2f;
+    padding: 8px 16px;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.brand {
+    text-decoration: none;
+    color: #0e4f14;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 60px); /* width of the div */
+    vertical-align: middle;
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.main-nav__item {
+    /* 
+        Can able to set the li elements in inline and also we can use the top and bottom properties 
+        of block element as well
+    */
+    display: inline-block;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    margin: 0 16px;
+}
+
+.main-nav__item > a {
+    text-decoration: none;
+    color: #0e4f14;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+.main-nav__item > a:hover {
+    color: white;
+    border-bottom: 5px solid;
+}
+
+.main-nav__item--cta a {
+    color: white;
+    background: crimson;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover {
+    color: crimson;
+    background: white;
+    border: none;
+}
+
+.main-footer {
+    background: black;
+    margin-top: 48px;
+    padding: 32px;
+}
+
+.main-footer__links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;   
+}
+
+.main-footer__link {
+    display: inline-block;
+    margin: 16px;
+}
+
+.main-footer__link a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-footer__link a:hover {
+    color: #85eb91;
+}
