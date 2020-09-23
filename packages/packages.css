@@ -1,0 +1,75 @@
+main {
+    margin-top: 32px;
+}
+
+.package {
+    background: #c7eec7;
+    width: 80%;
+    /* height: 40%; */
+    border: 5px solid darkgreen;
+    border-left: none;
+    margin: 16px 0;
+}
+
+.package a {
+    text-decoration: none;
+    display: block;
+    padding: 32px;
+}
+
+.package:hover {
+    border-color: #ff5454;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.package__title {
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.package__subtitle {
+    color: gray;
+    font-size: 32px;
+}
+
+.package__info {
+    font-size: 24px;
+    border: 2px solid darkgreen;
+    color: darkolivegreen;
+    background: white;
+    padding: 10px;
+}
+
+/* This is the small fix to tell the premium block not occupy the free element space because of float */
+.clearfloat {
+    clear: both;
+}
+
+#plus {
+    background: rgba(213, 255, 220, 0.95);
+}
+
+#free {
+    background: rgba(234, 252, 237, 0.95);
+    float: right;
+    border-left: 5px solid darkgreen;
+    border-right: none;
+    text-align: right;
+}
+
+#free:hover {
+    border-left-color: #ff5454;
+}
+
+#premium {
+    background: rgba(14, 79, 31, 0.95);
+}
+
+#premium .package__title {
+    color: white;
+}
+
+#premium .package__subtitle {
+    color: #bbb;
+}
