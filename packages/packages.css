@@ -1,12 +1,12 @@
 main {
-    padding-top: 48px;
+    padding-top: 2rem;
 }
 
 .background {
     background: url('../images/plans-background.jpg') center/cover;
     filter: grayscale(40%) brightness(1);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     z-index: -1;/* position the image behind the packages */
 }
@@ -17,14 +17,14 @@ main {
     /* height: 40%; */
     border: 5px solid darkgreen;
     border-left: none;
-    margin: 16px 0;
+    margin: 1rem 0;
     position: relative;
 }
 
 .package a {
     text-decoration: none;
     display: block;
-    padding: 32px;
+    padding: 2rem;
     color: inherit;
 }
 
@@ -35,7 +35,7 @@ main {
 
 .package__title {
     color: black;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -43,24 +43,24 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 20px;
-    font-size: 16px;
+    margin: 1.2rem;
+    font-size: 1rem;
     color: white;
     background: #ff5454;
-    padding: 8px;
+    padding: 0.5rem;
 }
 
 .package__subtitle {
     color: gray;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .package__info {
-    font-size: 24px;
+    font-size: 1.5rem;
     border: 2px solid darkgreen;
     color: darkolivegreen;
     background: white;
-    padding: 10px;
+    padding: 0.7;
 }
 
 /* This is the small fix to tell the premium block not occupy the free element space because of float */
