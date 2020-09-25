@@ -1,3 +1,4 @@
+
 ## Cascading Style Sheets
 
 ### Specificity
@@ -138,6 +139,8 @@ like :hover or :active
 Its used to change the specific part of the element.
 like ::first-letter or ::after or ::before
 
+-----------------------------------------------------
+
 ### Position
 Default position for all the HTML element is static
 
@@ -161,7 +164,9 @@ In-case if we want to set overflow:hidden to body tag of our page, then we need 
 #### Sticky => Combination of relative and fixed
 A sticky element toggles between relative and fixed, depending on the user's scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). As soon as the element touches the viewport it will change as position:fixed (using the top property we can define the distance between the viewport and the element). Also once the end of the parent element reached, it will again reset to relative position.
 
-### Background
+-----------------------------------------------------
+
+### Background Properties
 Background size value can be given in pixels or percentages. It contains two values first value is Width and second value is Height. We can also give predefined values like **contain and cover**.
 
 #### background-size: cover
@@ -172,10 +177,10 @@ It will display full image without cropping. But we may end up having empty spac
 
 #### background-position
 Background position value can be given in pixel or percentages. It contains two values first value is X axis (left edge) and second value is Y axis (top edge).  
-X axis value in pixel defines how the left edge of the image should be positioned relative to the left edge of the surrounding container. 
+X axis value in pixel defines how the left edge of the image should be positioned relative to the left edge of the surrounding container.  
 Y axis value in pixel defines how the top edge of the image should be positioned relative to the top edge of the surrounding container.
 
-X axis value in percentages defines how the excess space of the image should be positioned or cropped from the surrounding container.
+X axis value in percentages defines how the excess space of the image should be positioned or cropped from the surrounding container.  
 Y axis value in percentages defines how the top edge of the image should be positioned  or cropped from the surrounding container. The default value for Y axis is 50% percentage which means 50% crop at top and bottom. If we give 10% then in top 10% and 90% will be cropped from bottom.
 
 We can also give predefined values like **center and cover**.
@@ -198,7 +203,7 @@ List of background properties
 7) background-clip			=> Defines whether background extends underneath border  
 8) background-attachment	=> Scrolling behavior of background image  (only applies to background-image)  
 
-background-origin and background-clip are similar to box-sizing: border-box (where it will consider border and padding along the width of the content). By default it will have padding-box which means it will consider only content and padding, not the space of border.
+**background-origin and background-clip** are similar to box-sizing: border-box (where it will consider border and padding along the width of the content). By default it will have padding-box which means it will consider only content and padding, not the space of border.
 
 ```
 background-image: url("freedom.jpg");
@@ -208,7 +213,6 @@ background-position: left 10% bottom 20%;
 background-origin: border-box;
 background-clip: border-box;
 ```
-
 
 ##### Shorthand background property
 After the image URL we need to give position and size by separating these two with slash. For the origin and clip, if the last value is same it will apply to both and ifs different, first value will be taken for origin and second will be taken for clip.
@@ -229,4 +233,51 @@ Filters are used to change the visual representation of the element. Examples ar
 We can select individual elements in the single image icon and we can style individually.
 Important styles are fill: color, stroke: color, storke-width:10px 
 
+-----------------------------------------------------
+
+### Units
+
+1) Pixel
+2) Percentage
+3) em
+4) root em
+5) View port height
+6) View port width
+
+#### Which are the properties can having these units?
+1) font-size
+2) padding
+3) border
+4) margin
+5) width
+6) height
+7) top, bottom, left, right
+
+#### Size calculation
+Absolute Length	=> User setting in browser font size is ignored => px  
+Viewport Length	=> Adjust the element to the current viewport 	=> vh, vw, vmim, vmax, %  
+Font Relative Length => Adjust to the default font size 		=> rem, em, %  
+
+#### How percentage units are calculated ? => Percentage unit for an element is decided based on the containing block or parent of that element
+1) If the element is positioned as fixed, then the containing block is viewport so viewport size(width or height) will be taken into consideration for that child element.  
+2) If the element is positioned as absolute then the containing block is, ancestor element content plus padding. Ancestor elements are decided either closest element which is not positioned as static or if there is no parent element have positioned value other than static then viewport size(width or height) will be taken into consideration for that child element.  
+3) If the element is positioned as static or relative then the containing block is, ancestor element content which will be a closest block level element.  
+
+#### em and rem
+If we set em in the font-size, the computed value will be em*16px. Imagine we are setting font-size:1.2em for the parent element(1.2em=19.2px) and child element (1.1em).  
+Parent element font-size will be 1.2em which 19.2px but if we set child element font-size it has to be 1.1*16 = 17.6 but the computed font-size will be 21.12(19.2*1.1em). 
+The child element will compute the font-size based on the parent element font size. To avoid this behavior we need to rem, which will basically take the unit from the root element which is html tag.  
+
+Viewport height and width always refers to the viewport size.
+
+#### Which Units to Choose?
+1) font-size				=> for root element we don't need to set any. it will use browser font-size. But for other elements we can use rem. em can be used for children.
+2) padding and margin		=> rem or px
+3) border					=> px
+4) width and height 		=> % or vw and vh
+5) top, bottom, left, right	=> %
+
+We can use margin:auto for centering the elements. But it can be applied to block level elements with explicitly assigned width.
+
+-----------------------------------------------------
 
