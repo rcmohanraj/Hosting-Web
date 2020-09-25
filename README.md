@@ -161,4 +161,72 @@ In-case if we want to set overflow:hidden to body tag of our page, then we need 
 #### Sticky => Combination of relative and fixed
 A sticky element toggles between relative and fixed, depending on the user's scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). As soon as the element touches the viewport it will change as position:fixed (using the top property we can define the distance between the viewport and the element). Also once the end of the parent element reached, it will again reset to relative position.
 
+### Background
+Background size value can be given in pixels or percentages. It contains two values first value is Width and second value is Height. We can also give predefined values like **contain and cover**.
+
+#### background-size: cover
+It will find out which part of the image is higher and will set the width and it used to fill the image always fit into the container.
+
+#### background-size: contain
+It will display full image without cropping. But we may end up having empty space in the container.
+
+#### background-position
+Background position value can be given in pixel or percentages. It contains two values first value is X axis (left edge) and second value is Y axis (top edge).  
+X axis value in pixel defines how the left edge of the image should be positioned relative to the left edge of the surrounding container. 
+Y axis value in pixel defines how the top edge of the image should be positioned relative to the top edge of the surrounding container.
+
+X axis value in percentages defines how the excess space of the image should be positioned or cropped from the surrounding container.
+Y axis value in percentages defines how the top edge of the image should be positioned  or cropped from the surrounding container. The default value for Y axis is 50% percentage which means 50% crop at top and bottom. If we give 10% then in top 10% and 90% will be cropped from bottom.
+
+We can also give predefined values like **center and cover**.
+
+#### background-position: center  (which is same as X=> 50% and Y => 50%)
+If we set as center, the part of the image that do not fit into the container, 50% percent will be cropped from left, right and top, bottom. Center of Image will be the center of the container.
+
+#### background-position: left top (which is same as X=> 0% and Y => 0%)
+It means the image will be aligned to the left and top and excess image will be cropped in right and bottom.
+
+We can also give left bottom as well left 10% bottom 20% means left side 10% crop and bottom 20% crop.
+
+List of background properties
+1) background-image			=> Sets one or more background  
+2) background-color 		=> Sets a solid background color  
+3) background-position		=> Sets initial position relative to background position layer (only applies to background-image)  
+4) background-size			=> Sets size of the background-image  (only applies to background-image)  
+5) background-repeat		=> Define how background-image are repeated (only applies to background-image)  
+6) background-origin		=> Allows to set background position area (only applies to background-image)    
+7) background-clip			=> Defines whether background extends underneath border  
+8) background-attachment	=> Scrolling behavior of background image  (only applies to background-image)  
+
+background-origin and background-clip are similar to box-sizing: border-box (where it will consider border and padding along the width of the content). By default it will have padding-box which means it will consider only content and padding, not the space of border.
+
+```
+background-image: url("freedom.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: left 10% bottom 20%;
+background-origin: border-box;
+background-clip: border-box;
+```
+
+
+##### Shorthand background property
+After the image URL we need to give position and size by separating these two with slash. For the origin and clip, if the last value is same it will apply to both and ifs different, first value will be taken for origin and second will be taken for clip.
+
+```
+background: url("freedom.jpg") left 10% bottom 20% / cover no-repeat border-box padding-box scroll;
+(or)
+background: url("freedom.jpg") left 10% bottom 20% / cover no-repeat border-box scroll;
+```
+
+##### Tip 
+Height of the image in the surrounding container as well as the height with percentage in the image container will not take effect because be default width and height of the actual image will be taken into consideration. To summarize percentage values on image don't work when the image container is an inline element, if the container changed to inline-block, it will take the percentage values from the surrounding container.
+
+#### Filters
+Filters are used to change the visual representation of the element. Examples are grayscale, brightness etc.,
+
+#### SVG
+We can select individual elements in the single image icon and we can style individually.
+Important styles are fill: color, stroke: color, storke-width:10px 
+
 

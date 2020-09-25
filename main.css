@@ -1,9 +1,16 @@
 #product-overview {
-    background: url("freedom.jpg");
+    background: url("./images/freedom.jpg") left 10% bottom 20% / cover no-repeat border-box;
+    /* background-image: url("freedom.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left 10% bottom 20%;
+    background-origin: border-box;
+    background-clip: border-box; */
     width: 100%;
     height: 528px;
     padding: 10px;
     margin-top: 43px;
+    position: relative;
 }
 
 #product-overview h1 {
@@ -109,6 +116,7 @@
     border-radius: 50%;
     height: 128px;
     margin: auto;   /* Used to take up the available space horizontally  */
+    padding: 20px;  /* for reducing SVG size */
 }
 
 .key-feature__description {
