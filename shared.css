@@ -21,6 +21,10 @@ body {
     left: 0;
 }
 
+main {
+    margin-top: 3.5rem;
+}
+
 .main-header {
     width: 100%;
     background: #2fcc2f;
@@ -40,8 +44,8 @@ body {
     text-decoration: none;
     color: #0e4f14;
     font-weight: bold;
-    font-size: 1.4rem;
-    height: 1.4rem;
+    /* font-size: 1.4rem; */
+    height: 2.5rem;
     display: inline-block;
 }
 
@@ -72,10 +76,7 @@ body {
   }
 
 .main-nav {
-    display: inline-block;
-    text-align: right;
-    width: calc(100% - 122px); /* width of the div */
-    vertical-align: middle;
+    display: none;
 }
 
 .main-nav__items {
@@ -129,6 +130,19 @@ body {
     margin-top: 3rem;
     padding: 2rem;
 }
+
+@media (min-width: 40rem) {
+    .toggle-button {
+      display: none;
+    }
+  
+    .main-nav {
+      display: inline-block;
+      text-align: right;
+      width: calc(100% - 122px);
+      vertical-align: middle;
+    }
+  }
 
 .main-footer__links {
     list-style-type: none;

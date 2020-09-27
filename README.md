@@ -339,7 +339,54 @@ Have to change the CSS property notations in the camel case while directly acces
 
 -----------------------------------------------------
 
+### Responsive Design
 
+Response design is depends on hardware and software pixels. If we change to mobile in the Dev Tools of the browser, our entire page is displayed into mobile device. Even though we selected the mobile device with less pixel, still we can able to see entire desktop version of our application inside the selected mobile device. To make effect of the mobile width in the Dev Tools we need to add the below viewport meta tag. This viewport meta tag helps us to adjust our site to the device viewport.  
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0, 
+    user-scalable=yes, maximum-scale=2.0, minimum-scale=1.5">
+```
+name=viewport 			=> means it should target the viewport area inside our browser, that should display our browser  
+width=device-width		=> sets the actual device width to the application width, if this value not present we will not able to scale for mobile devices  
+initial-scale=1.0		=> sets the initial scale value of the application  
+user-scalable=yes		=> sets whether the user can able to zoom in or not. by default its yes, so the user can zoom-in and zoom-out.  
+maximum-scale=2.0		=> sets the scale on the maximum value a user can zoom-in the application  
+minimum-scale=1.5		=> sets the scale on the minimum value a user can zoom-out the application  
 
+Now when the pixel is reduced in normal mode and mobile mode will have same responsive state of our application. From the below URL we can able to find the physical width and the respective CSS width for most of the mobile devices. With the help of this, we can able to define the CSS behavior on the different devices using Media Queries.  
 
+https://www.mydevice.io/#compare-devices
 
+#### Media Queries
+Change the design depending on the device size.
+
+##### Approach 1 => Build from mobile design to desktop design
+```
+//If the min-width is equal or greater than 40rem or 640pixels then apply the styles in the media block.
+@media (min-width: 40rem) {
+	#product-overview h1 {
+		font-size: 4rem;
+	}
+}
+```
+
+##### Approach 2 => Build from desktop design to mobile design
+```
+//If the max-width is equal or less than 40rem or 640pixels then apply the styles in the media block.
+@media (max-width: 40rem) {
+	#product-overview h1 {
+		font-size: 2rem;
+	}
+}
+```
+We can also define min-height and orientation:portrait in media queries. Apply style only two conditions matched with and operator(**and**) also apply style if anyone condition met using or operator (**,**).
+```
+@media (max-width: 40rem) and (min-height: 40rem) {
+	/* styles */
+}
+
+@media (max-width: 40rem), (orientation:portrait) {
+	/* styles */
+}
+```
+-----------------------------------------------------

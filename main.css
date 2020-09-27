@@ -1,5 +1,5 @@
 #product-overview {
-    background: url("./images/freedom.jpg") left 10% bottom 80% / cover no-repeat border-box;
+    background: url("./images/freedom.jpg") center / cover no-repeat border-box;
     /* background-image: url("freedom.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,15 +8,32 @@
     background-clip: border-box; */
     width: 100vw;
     /* height: 528px; */
-    height: 40vh;
+    height: 33vh;   /* 33% of the viewport */
     padding: 0.6rem;
-    margin-top: 2.75rem;
+    /* margin-top: 2.75rem; */
     position: relative;
 }
 
 #product-overview h1 {
     color: white;
     font-family: 'Calibri', sans-serif;
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    font-size: 1.6rem;
+}
+
+/* When the pixel reaches 640pixel this styles will kick in */
+@media (min-width: 40rem) and (min-height: 40rem) {
+
+    #product-overview {
+        height: 40vh;
+        background-position: 50% 24%;
+    }
+
+    #product-overview h1 {
+        font-size: 3rem;
+    }
 }
 
 .section-title {
@@ -26,26 +43,32 @@
 }
 
 /* Article Starts */
-.plan__list {
+/* commenting for changing as mobile first design and moved to media query*/
+/* .plan__list {
     width: 80%;
     margin: auto;
     text-align: center;
-}
+} */
 
 .plan {
     background: #a3ecab;
     text-align: center;
-    padding: 2rem;
-    margin: 0.5rem;
+    padding: 1rem;
+    /* commenting for changing as mobile first design and moved to media query*/
+    /* margin: 0.5rem;
     display: inline-block;
     width: 30%;
-    vertical-align: middle;
+    vertical-align: middle; */
+    width: 100%;
+    margin: 0.5rem 0;
+
 }
 
 .plan--highlighted {
     background: green;
     color: white;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    /* commenting for changing as mobile first design and moved to media query*/
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
 }
 
 .plan__badge {
@@ -82,6 +105,27 @@
     color: black;
 }
 
+@media (min-width: 40rem) {
+    .plan {
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle; 
+        margin: 0.5rem;
+        min-width: 13rem;
+        max-width: 20rem;
+    }
+
+    .plan__list {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .plan--highlighted {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+}
+
 /* Article Ends */
 
 
@@ -99,16 +143,18 @@
 
 .key-features__list {
     list-style-type: none;
+    /* commenting for changing as mobile first design and moved to media query*/
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-.key-feature {
+/* commenting for changing as mobile first design and moved to media query*/
+/* .key-feature {
     display: inline-block;
     width: 33%;
     vertical-align: top;
-}
+} */
 
 .key-feature__image {
     background: #ffcede;
@@ -125,6 +171,22 @@
     font-weight: bold;
     color: white;
     font-size: 1.2rem;
+}
+
+@media (min-width: 40rem) {
+    /* .key-features__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    } */
+
+    .key-feature {
+        display: inline-block;
+        width: 33%;
+        vertical-align: top;
+        max-width: 20rem;
+    }
 }
 
 /* Key Feature Ends */
