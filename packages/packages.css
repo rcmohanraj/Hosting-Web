@@ -95,3 +95,27 @@ main {
 #premium .package__subtitle {
     color: #bbb;
 }
+
+@media (min-width: 40rem) {
+    main {
+        /* to keep the left and right margin equal, set to auto from 0 */
+        /* margin: 3rem auto; */
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 75rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .package {
+        border-left: 5px solid darkgreen;
+    }
+
+    #free {
+        border-right: 5px solid darkgreen;
+    }
+
+    #free:hover {
+        border-right-color: #ff5454;
+    }
+}
