@@ -390,3 +390,83 @@ We can also define min-height and orientation:portrait in media queries. Apply s
 }
 ```
 -----------------------------------------------------
+### Forms
+
+#### Advance CSS Selectors
+
+##### Element with Attribute
+```
+[type] {
+	color: red;
+}
+
+<input type="text">
+```
+
+##### Element with Specific Attribute Value
+```
+[type="email"] {
+	color: red;
+}
+
+<input type="email">
+```
+
+##### Element with Specific Attribute Value in List
+```
+[lang~="en-us"] {
+	color: red;
+}
+
+<p lang="en-us en-gb">Hi!</p>
+```
+
+##### Element with Specific Attribute Value/Value- (Prefix)
+```
+[lang|="en"] {
+	color: red;
+}
+
+<p lang="en-us">Hi!</p>
+```
+
+##### Element with Specific Attribute Value Prefix
+```
+[href^="#"] {
+	color: red;
+}
+
+<a href="#all">Link</a>
+```
+
+##### Element with Specific Attribute Value Suffix
+```
+[href$=".de"] {
+	color: red;
+}
+
+<a href="ab.de">Link</a>
+```
+
+##### Element with at-least one Attribute Value (somewhere in the value)
+```
+[src*="cdn"] {
+	color: red;
+}
+
+<img src="i.cdn.com">
+```
+
+##### Check Values case-insensitively 
+```
+[src*="cdn" i] {
+	color: red;
+}
+
+<img src="i.CDN.com">
+```
+
+#### Outline
+Outlines are used during the focus of the input text boxes. Outlines are similar to border but it will come after the border.
+
+-----------------------------------------------------

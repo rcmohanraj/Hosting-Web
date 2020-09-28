@@ -22,6 +22,7 @@ body {
 }
 
 main {
+    min-height: calc(100vh - 3.5rem - 8rem);
     margin-top: 3.5rem;
 }
 
@@ -142,6 +143,7 @@ main {
       width: calc(100% - 122px);
       vertical-align: middle;
     }
+
   }
 
 .main-footer__links {
@@ -153,7 +155,7 @@ main {
 
 .main-footer__link {
     display: inline-block;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 .main-footer__link a {
@@ -174,7 +176,7 @@ main {
     background: white;
     width: 80%;
     height: 100vh;
-  }
+}
   
   .mobile-nav__items {
     width: 90%;
@@ -214,6 +216,12 @@ main {
     outline: none;
 }
 
+.button[disabled] {
+    cursor: not-allowed;
+    border: #a1a1a1;
+    background: #ccc;
+    color: #7c7a7a;
+}
 
 /* 
 While clicking the button in plans we are setting this class using javascript 
@@ -223,3 +231,10 @@ So here we are setting important to overwrite the latest modal class style
 .open {
     display: block !important;
 }
+
+@media (min-width: 40rem) {
+    .main-footer__link {
+      display: inline-block;
+      margin: 0 1rem;
+    }
+  }
