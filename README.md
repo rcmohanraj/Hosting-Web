@@ -1,4 +1,5 @@
 
+
 ## Cascading Style Sheets
 
 ### Specificity
@@ -467,6 +468,147 @@ We can also define min-height and orientation:portrait in media queries. Apply s
 ```
 
 #### Outline
-Outlines are used during the focus of the input text boxes. Outlines are similar to border but it will come after the border.
+Outlines are used during the focus of the input boxes. Outlines are similar to border but it will come after the border. Outlines can be disabled using outline:none and we can implement our own border during the element focus.
 
 -----------------------------------------------------
+
+### Fonts
+
+#### Generic Family and their respective Font Families
+1) serif		=>	Times New Roman, Georgia
+2) sans-serif	=>	Helvetica, Verdana
+3) cursive		=>	Brush Script, Mistral
+4) monospace	=>	Courier New, Lucida Bright
+5) fantasy		=>	Uncommon generic family
+
+Checking font availability based on operating system.
+https://www.cssfontstack.com/
+
+We can import google web fonts directly in css file using the import syntax
+```
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+</style>
+```
+Now we can start using this font like font-family: "Roboto", sans-serif.
+
+We can add custom fonts to our application folder and then refer the newly added fonts to the css file like below.
+
+```
+@font-face {
+	font-family: "RobotoCustom";
+	src: url('Roboto-Regular.ttf');
+	font-style: 400
+}
+```
+
+Now we can able to use this in the css as font-family:"RobotoCustom", sans-serif.
+
+##### List of font properties
+font-size  
+font-style  
+font-weight  
+font-stretch  
+font-variant  
+letter-spacing  
+white-space  
+line-height  
+text-decoration  
+text-shadow  
+
+##### Font Shorthands
+
+```
+font: font-style font-variant font-weight font-size/line-height font-family
+font: italic small-caps 700 1.2rem/2 "Roboto", sans-serif;
+```
+
+-----------------------------------------------------
+
+### Flexbox (display: flex)
+Parent 		=> Flex Container(properties: flex-flow, justify-content, align-content, align-items)  
+Children	=> Flex Items(properties: order, flex, align-self)  
+
+Set display:flex to container then by default we see two properties set.
+1) flex-direction:row
+2) flex-wrap: nowrap
+
+#### Axis
+1) **flex-direction: row**
+Main axis => start at top left and goes to top right corner  
+Cross axis => start at top left and goes to bottom left corner  
+
+2) **flex-direction: row-reverse**
+Main axis => start at top right and goes to top left corner  
+Cross axis => start at top right and goes to bottom right corner  
+
+3) **flex-direction: column**
+Main axis => start at top left and goes to bottom left corner  
+Cross axis => start at top left and goes to top right corner  
+
+4) **flex-direction: column-reverse**
+Main axis => start at bottom left and goes to top left corner  
+Cross axis => start at bottom left and goes to bottom right corner  
+
+Items are aligned against the Main Axis.
+
+#### Flex Shorthand
+flex-flow: row wrap;
+**(flex-flow: flex-direction flex-wrap)**
+
+#### Flex Container Properties
+
+i) **align-items** 		=>	this property will align the items in the Cross Axis. Default value is stretch
+1) align-items value is flex-start means then items will be aligned at the start of the cross axis corner
+2) align-items value is flex-end means then items will be aligned at the end of the cross axis corner
+3) align-items value is center means then items will be aligned at the center point of cross axis
+
+ii) **justify-content** 	=>	this property will align the items in the Main Axis. Default value is flex-start
+1) justify-content value is flex-start means then items will be aligned at the start of the main axis corner
+2) justify-content value is flex-end means then items will be aligned at the end of the main axis corner
+3) justify-content value is center means then items will be aligned at the center point of main axis
+
+So if align-items and justify-content both are set to center means then the items will be exactly at the middle of the viewport.
+
+iii) **align-content** 		=> this property modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines. There must be multiple lines of items for this property to have any effect. Default value is stretch
+
+#### Flex Items Properties
+To align each items in the container we have below properties  
+i) **order**		=>	this property allows to change the order of the elements that we have defined initially in HTML. Bigger the order number, it will move to end position, If the order is negative it will move to first. Default order value is 0.  
+
+ii) **align-self**	=> this property helps us to align the item which is part of the flex container on the Cross Axis. Compared to align-items, it will align only specific item where as align-items will align all the items in the flex container.  
+
+iii) **flex**
+1) **flex-grow**	=> 	this property decides how the remaining space is divided between the elements. Higher the flex-grow value, faster it grows. Default value is 0. 
+2) **flex-shrink**	=>	this property decides how the elements will shrink. Higher the flex-shrink value, faster it shrinks. Default value for flex-shrink is 1, if the value is 0 then the element will not shrink.  
+3) **flex-basis**	=>	its size of an element based on the flex direction (Main Axis).  
+If the main axis is from left to right then flex basis will overwrite the width of the element. 
+If the main axis is from top to bottom then the flex basis will overwrite the height of the element.
+Default value for flex-basis is auto, in that case it will fall back to the actual height or width of the element.
+
+#### Flex Items Shorthand
+flex: 0 1 auto;
+**(flex: flex-grow flex-shrink flex-basis)**
+
+-----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

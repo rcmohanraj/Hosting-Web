@@ -34,24 +34,30 @@ main {
     padding: 0.5rem 1rem;
     position: fixed;
     z-index: 1;
+    display: flex;
+    align-items: center;/* center align items across cross axis */
+    justify-content: space-between;
 }
 
-.main-header > div {
+/* achieved this via flex */
+/* .main-header > div {
     display: inline-block;
     vertical-align: middle;
-}
+} */
 
 .main-header__brand {
     text-decoration: none;
     color: #0e4f14;
     font-weight: bold;
     /* font-size: 1.4rem; */
-    height: 2.5rem;
+   /*  height: 2.5rem;
     display: inline-block;
+    vertical-align: middle; */
 }
 
 .main-header__brand img {
-    height: 100%;
+    height: 2.5rem;
+    vertical-align: middle;
 }
 
 .toggle-button {
@@ -84,14 +90,16 @@ main {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    display: flex;
+    /* justify-content: flex-end; */
 }
 
 .main-nav__item {
     /* 
-        Can able to set the li elements in inline and also we can use the top and bottom properties 
-        of block element as well
+        inline-block helps to align the li elements in inline and also we can use the 
+        top and bottom properties of block element as well
     */
-    display: inline-block;
+    /* display: inline-block; */
     /* padding-left: 10px;
     padding-right: 10px; */
     margin: 0 1rem;
@@ -138,11 +146,15 @@ main {
     }
   
     .main-nav {
+        display: flex;
+    }
+
+    /* .main-nav {
       display: inline-block;
       text-align: right;
       width: calc(100% - 122px);
       vertical-align: middle;
-    }
+    } */
 
   }
 
@@ -150,12 +162,14 @@ main {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-footer__link {
-    display: inline-block;
-    margin: 1rem 0;
+    /* display: inline-block; */
+    margin: 0.5rem 0;
 }
 
 .main-footer__link a {
@@ -178,22 +192,26 @@ main {
     height: 100vh;
 }
   
-  .mobile-nav__items {
-    width: 90%;
-    height: 100%;
+.mobile-nav__items {
     list-style: none;
-    margin: 10% auto;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
     padding: 0;
-    text-align: center;
-  }
-  
-  .mobile-nav__item {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav__item {
     margin: 1rem 0;
-  }
-  
-  .mobile-nav__item a {
+}
+
+.mobile-nav__item a {
     font-size: 1.5rem;
-  }
+}
 
 .button {
     background: #0e4f14;
@@ -233,8 +251,13 @@ So here we are setting important to overwrite the latest modal class style
 }
 
 @media (min-width: 40rem) {
+    .main-footer__links {
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .main-footer__link {
-      display: inline-block;
+      /* display: inline-block; */
       margin: 0 1rem;
     }
   }
