@@ -50,6 +50,11 @@
     text-align: center;
 } */
 
+.plan__list {
+    display: flex;
+    flex-direction: column;
+}
+
 .plan {
     background: #a3ecab;
     text-align: center;
@@ -106,19 +111,26 @@
 }
 
 @media (min-width: 40rem) {
+
+    .plan__list {
+        /* width: 100%;
+        margin: auto;
+        text-align: center; */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .plan {
-        display: inline-block;
+        /* display: inline-block;
         width: 30%;
-        vertical-align: middle; 
+        vertical-align: middle;  */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         margin: 0.5rem;
         min-width: 13rem;
         max-width: 20rem;
-    }
-
-    .plan__list {
-        width: 100%;
-        margin: auto;
-        text-align: center;
     }
 
     .plan--highlighted {
@@ -146,7 +158,9 @@
     /* commenting for changing as mobile first design and moved to media query*/
     margin: 0;
     padding: 0;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
 }
 
 /* commenting for changing as mobile first design and moved to media query*/
@@ -174,18 +188,16 @@
 }
 
 @media (min-width: 40rem) {
-    /* .key-features__list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    } */
+    .key-features__list {
+        flex-direction: row;
+        justify-content: center;
+    }
 
     .key-feature {
-        display: inline-block;
         width: 33%;
-        vertical-align: top;
         max-width: 20rem;
+        /* display: inline-block;
+        vertical-align: top; */
     }
 }
 

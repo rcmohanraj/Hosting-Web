@@ -78,6 +78,9 @@ main {
     /* to keep the left and right margin equal, set to auto from 0 */
     margin: 3rem auto;
     max-width: 75rem;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
   }
   
   .testimonial__list {
@@ -86,15 +89,15 @@ main {
   }
   
   .testimonial__image-container {
-      display: inline-block; 
-      vertical-align: middle;
+      /* display: inline-block; 
+      vertical-align: middle; */
       box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.4);
       width: 66%; /* to avoid the gap between mobile and desktop version switching */
   }
 
   .testimonial__info {
-    display: inline-block; 
-    vertical-align: middle;
+    /* display: inline-block; 
+    vertical-align: middle; */
     width: 30%;
   }
 
